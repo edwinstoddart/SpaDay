@@ -1,0 +1,23 @@
+﻿<form method="post" action="/user">
+    <div class="form-group">
+        <label for="Username">Username: </label>
+        <input name="Username" type="text" value="@ViewBag.Username"/>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email Address: </label>
+        <input name="Email" type="email" value="@ViewBag.Email"/>
+    </div>
+    <div class="form-group">
+        @if (ViewBag.passwordMismatch != null && ViewBag.passwordMismatch)
+        {
+            <p>Please make sure both password fields are the same.</p>
+        }
+        <label for="Password">Password: </label>
+        <input name="Password" type="password" />
+    </div>
+    <div class="form-group">
+        <label for="verify">Confirm Password: </label>
+        <input name="verify" type="password"/>
+    </div>
+    <input type="submit" value="Sign Up"/>
+</form>
